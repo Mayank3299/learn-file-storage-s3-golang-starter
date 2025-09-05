@@ -131,4 +131,6 @@ func (cfg *apiConfig) handlerUploadVideo(w http.ResponseWriter, r *http.Request)
 		respondWithError(w, http.StatusInternalServerError, "Couldn't update video", err)
 		return
 	}
+
+	respondWithJSON(w, http.StatusOK, videoMetadata)
 }
